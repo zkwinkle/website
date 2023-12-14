@@ -4,7 +4,7 @@ use maud::{html, Markup, Render};
 pub struct Css(&'static str);
 
 impl Css {
-    pub const STYLESHEET: Css = Css("/static/styles.css");
+    pub const STYLESHEET: Css = Css("/stylesheet.css");
 }
 
 impl Render for Css {

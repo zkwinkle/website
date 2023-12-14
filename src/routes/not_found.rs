@@ -1,11 +1,11 @@
-use axum::{http::StatusCode, response::IntoResponse};
-use maud::html;
+use axum::http::StatusCode;
+use maud::{html, Markup};
 
-pub async fn not_found() -> impl IntoResponse {
+pub async fn not_found() -> (StatusCode, Markup) {
     (
         StatusCode::NOT_FOUND,
         html! {
-            h1 { "404 Page Not Found" }
+            h1 { "404 Page Not Found :(" }
         },
     )
 }

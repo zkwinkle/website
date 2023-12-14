@@ -1,5 +1,6 @@
-mod routes;
+mod components;
 mod css;
+mod routes;
 
 #[tokio::main]
 async fn main() {

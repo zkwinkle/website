@@ -1,3 +1,4 @@
+use axum::handler::HandlerWithoutStateExt;
 use axum::routing::get;
 use axum::Router;
 use tower_http::services::ServeDir;
@@ -9,6 +10,5 @@ mod not_found;
 pub fn create_router() -> Router {
     Router::new()
         .route("/", get(home::home))
-        .nest_service("/static", ServeDir::new("static"))
-        .fallback(not_found::not_found)
+        .fallback_service(ServeDir::new("public"))
 }

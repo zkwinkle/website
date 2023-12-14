@@ -1,11 +1,11 @@
 use maud::{html, Markup};
 
-use crate::css::Css;
+use crate::components::headings;
 
 pub async fn home() -> Markup {
     html! {
-        head { ( Css::STYLESHEET ) }
+        (headings())
         h1 { "Hello, World!" }
-        p { "Blue text!" }
+        p { "Roboto Lorem Ipsum!" }
     }
 }
