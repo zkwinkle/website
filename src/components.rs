@@ -19,17 +19,13 @@ const TABS: [NavLink; 2] = [
 
 fn navbar() -> Markup {
     html! {
-        ul {
-            @for link in TABS {
-                li{ a href=(link.link) { (link.name) }}
+        nav class="navbar" {
+            ul {
+                @for link in TABS {
+                    li { a  href=(link.link) { (link.name) }}
+                }
             }
         }
-    }
-}
-
-fn header() -> Markup {
-    html! {
-        header { (navbar()) }
     }
 }
 
