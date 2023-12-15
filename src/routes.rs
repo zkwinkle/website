@@ -10,5 +10,5 @@ mod not_found;
 pub fn create_router() -> Router {
     Router::new()
         .route("/", get(home::home))
-        .fallback_service(ServeDir::new("public"))
+        .fallback_service(ServeDir::new("public").fallback(not_found::not_found.into_service()))
 }
