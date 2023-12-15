@@ -30,7 +30,7 @@ body{
 	max-width:650px;
 	line-height:1.6;
 	font-size:18px;
-	color: var(--text);
+	color: var(--fg);
 	background-color: var(--bg);
 	padding:0 10px;
 }
@@ -60,4 +60,9 @@ p {
 .navbar ul li a {
 	font-size: 1.1rem;
 	color: var(--link-color);
+}
+
+.navbar ul li a.nav-active {
+	font-size: 1.1rem;
+	color: var(--accent-color);
 }

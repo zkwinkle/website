@@ -1,4 +1,5 @@
 use crate::css::Css;
+use axum::http::Uri;
 use maud::{html, Markup};
 
 struct NavLink {
@@ -9,7 +10,7 @@ struct NavLink {
 const TABS: [NavLink; 2] = [
     NavLink {
         name: "🏡 Home",
-        link: "/",
+        link: "/home",
     },
     NavLink {
         name: "📝 Blog",
@@ -17,21 +18,25 @@ const TABS: [NavLink; 2] = [
     },
 ];
 
-fn navbar() -> Markup {
+fn navbar(uri: Uri) -> Markup {
     html! {
         nav class="navbar" {
             ul {
                 @for link in TABS {
-                    li { a  href=(link.link) { (link.name) }}
+                    li { a
+                        class=@if uri.path().starts_with(link.link)
+                            { "nav-active" }
+                        href=(link.link)
+                        { (link.name) }}
                 }
             }
         }
     }
 }
 
-pub fn headings() -> Markup {
+pub fn headings(uri: Uri) -> Markup {
     html! {
         head { ( Css::STYLESHEET ) }
-        header { (navbar()) }
+        header { (navbar(uri)) }
     }
 }
