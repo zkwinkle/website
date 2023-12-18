@@ -6,7 +6,7 @@ mod routes;
 async fn main() {
     let router = routes::create_router();
 
-    axum::Server::bind(&"0.0.0.0:3000".parse().unwrap())
+    axum::Server::bind(&"0.0.0.0:31415".parse().unwrap())
         .serve(router.into_make_service())
         .await
         .unwrap();
