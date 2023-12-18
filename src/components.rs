@@ -1,6 +1,7 @@
-use crate::css::Css;
 use axum::http::Uri;
 use maud::{html, Markup};
+
+use crate::STYLESHEET;
 
 struct NavLink {
     name: &'static str,
@@ -36,7 +37,7 @@ fn navbar(uri: Uri) -> Markup {
 
 pub fn headings(uri: Uri) -> Markup {
     html! {
-        head { ( Css::STYLESHEET ) }
+        head { ( STYLESHEET ) }
         header { (navbar(uri)) }
     }
 }
