@@ -11,7 +11,7 @@ pub async fn home(uri: Uri) -> Markup {
             div {
                 h1 { "zkwinkle" }
                 p { "Computer engineer in the making, an avid learner with too
-                    many interests and too little time."}
+                    many interests and not enough time."}
             }
         } }
 
