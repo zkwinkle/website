@@ -3,6 +3,7 @@ use std::time::UNIX_EPOCH;
 
 use maud::{html, Markup, Render};
 
+/// Main stylesheet used throughout the website
 pub const STYLESHEET: Css = Css("/stylesheet.css");
 
 /// Links to a CSS stylesheet at the given path.
@@ -14,7 +15,7 @@ impl Render for Css {
             Ok(n) => {
                 // Add timestamp in development to reload stylesheet
                 if !cfg!(feature = "production") {
-                    format!("{}?{}", self.0, n.as_secs().to_string())
+                    format!("{}?{}", self.0, n.as_secs())
                 } else {
                     self.0.to_owned()
                 }

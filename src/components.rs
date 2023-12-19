@@ -3,6 +3,7 @@ use maud::{html, Markup};
 
 use crate::STYLESHEET;
 
+/// Tab / Link in the navbar
 struct NavLink {
     name: &'static str,
     link: &'static str,
@@ -35,6 +36,7 @@ fn navbar(uri: Uri) -> Markup {
     }
 }
 
+/// Generate the site's headings (<head> + header)
 pub fn headings(uri: Uri) -> Markup {
     html! {
         head { ( STYLESHEET ) }
