@@ -11,8 +11,8 @@ use crate::{components::navbar, STYLESHEET};
 /// divs, headers, footers.
 ///
 /// Usage:
-/// ```rust
-/// async fn endpoint(layout: Layout) -> Response {
+/// ```ignore
+/// async fn endpoint(layout: Layout) -> Markup {
 ///    layout.render(html! { "Hello, World!" })
 /// }
 /// ```
