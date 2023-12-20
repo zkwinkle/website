@@ -14,7 +14,7 @@ pub async fn home(layout: Layout) -> Markup {
         } }
 
         h1 { "Info" }
-        p { "I'm Ignacio, or " i { "zkwinkle" } ", as I often go by in online spaces.
+        p { "I'm Ignacio, or " em { "zkwinkle" } ", as I often go by in online spaces.
         I'm a student engineer, with an interest in the fields of Embedded (or any kind of low-level development), Graphics, Machine Learning, and Signal Analysis/Processing. I'm a big Rust🦀 enthusiast, also I use Arch BTW."
             br; br;
         "So welcome to my website / digital garden / virtual world! Here I'll be hosting my blog as well as any

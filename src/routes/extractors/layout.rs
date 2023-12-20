@@ -38,7 +38,9 @@ where
 impl Layout {
     pub fn render(self, content: Markup) -> Markup {
         html! {
-            head { ( STYLESHEET ) }
+            head {
+                ( STYLESHEET )
+            }
             div class="container" {
                 header { (Navbar::from_uri(self.uri)) }
                 (content)
