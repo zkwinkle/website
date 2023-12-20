@@ -26,13 +26,20 @@
 }
 
 body {
-	max-width:800px;
+	margin: 0;
 	line-height:1.6;
 	font-size:18px;
 	color: var(--fg);
 	background-color: var(--bg);
-	margin: 2rem auto;
-	padding:0 0.6rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 @media screen and (max-width: 600px) {
@@ -42,7 +49,8 @@ body {
 }
 
 header {
-	margin: 2rem auto;
+	padding: 1.5rem 0;
+	border-bottom: 0.2rem solid var(--bg-bright);
 }
 
 h1,h2,h3{
@@ -87,8 +95,7 @@ link {
 }
 
 .navbar {
-	padding: 0 1rem 1.25rem;
-	border-bottom: 0.2rem solid var(--bg-bright);
+	width: 100%;
 }
 
 .navbar ul {
@@ -119,7 +126,7 @@ link {
 	align-items: flex-end;
 	justify-content: center;
 	gap: 5%;
-	margin-bottom: 2rem;
+	margin: 2rem 0;
 }
 
 .home-banner img {
