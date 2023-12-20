@@ -1,11 +1,9 @@
-use axum::http::Uri;
 use maud::{html, Markup};
 
-use crate::components::headings;
+use super::extractors::Layout;
 
-pub async fn home(uri: Uri) -> Markup {
-    html! {
-        (headings(uri))
+pub async fn home(layout: Layout) -> Markup {
+    layout.render( html! {
         div { div class="home-banner" {
             img src="pfp.png";
             div {
@@ -42,7 +40,7 @@ pub async fn home(uri: Uri) -> Markup {
             li { "Antichamber 🧩" }
             li { "Team Fortress 2 🔥" }
             li { strike{"League of Legends 🙃"} }
-            li { "Zelda (in general) 🧝🏻‍♀️" }
+            li { "Zelda 🧝🏻‍♀️" }
         }
 
         h2 { "Favorite animes" }
@@ -54,5 +52,5 @@ pub async fn home(uri: Uri) -> Markup {
             li { "Princess Mononoke 🐺" }
         }
 
-    }
+    })
 }

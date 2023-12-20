@@ -6,6 +6,7 @@ use tower_http::services::ServeDir;
 
 use crate::app_config::AppConfig;
 
+pub mod extractors;
 mod home;
 mod not_found;
 

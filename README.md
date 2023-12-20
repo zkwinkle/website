@@ -17,7 +17,6 @@ These must be set when running in production
 
 - `PUBLIC_DIR`: Path to the `public` directory.
 
-## Reference for possible future tools
+## Hosting
 
-- [htmx](https://htmx.org/)
-- [twind.style](https://twind.style/)
+Hosted on my [website server](https://github.com/zkwinkle/website-server)

@@ -1,14 +1,13 @@
-use axum::http::{StatusCode, Uri};
+use axum::http::StatusCode;
 use maud::{html, Markup};
 
-use crate::components::headings;
+use super::extractors::Layout;
 
-pub async fn not_found(uri: Uri) -> (StatusCode, Markup) {
+pub async fn not_found(layout: Layout) -> (StatusCode, Markup) {
     (
         StatusCode::NOT_FOUND,
-        html! {
-            (headings(uri))
+        layout.render(html! {
             h1 { "404 Page Not Found :(" }
-        },
+        }),
     )
 }
