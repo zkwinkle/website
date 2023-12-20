@@ -34,7 +34,7 @@ pub async fn home(layout: Layout) -> Markup {
 
         p { "Here's a few of my favorites, so you can get to know me better!" }
 
-        h2 { "Favorite videogames" }
+        h3 { "Favorite videogames" }
         ul {
             li { "Hollow Knight 🪲" }
             li { "Antichamber 🧩" }
@@ -43,7 +43,7 @@ pub async fn home(layout: Layout) -> Markup {
             li { "Zelda 🧝🏻‍♀️" }
         }
 
-        h2 { "Favorite animes" }
+        h3 { "Favorite animes" }
         ul {
             li { "Trigun 🔫" }
             li { "Code Geass 🤖" }
