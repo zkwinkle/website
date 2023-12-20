@@ -5,7 +5,8 @@ use axum::{
 };
 use maud::{html, Markup};
 
-use crate::{components::navbar, STYLESHEET};
+use crate::components::navbar;
+use crate::css::STYLESHEET;
 
 /// Defines the base layout of a page that will wrap its contents with container
 /// divs, headers, footers.
