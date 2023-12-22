@@ -23,7 +23,7 @@ async fn blog(layout: Layout) -> Markup {
         @for blog in &BLOG_POSTS {
             div class="post" {
                 h2  { a href=(format!("/blog/{}",linkify_title(blog.title))) { (blog.title) } }
-                p { (blog.date) }
+                time datetime=(blog.date) { (blog.date) }
             }
         }
     })
