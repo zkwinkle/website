@@ -19,12 +19,12 @@ const TABS: [NavLink; 2] = [
 ];
 
 /// A navbar with certain navlinks
-pub struct Navbar {
+pub struct Navbar<'a> {
     links: &'static [NavLink],
-    current_uri: Uri,
+    current_uri: &'a Uri,
 }
 
-impl Render for Navbar {
+impl Render for Navbar<'_> {
     fn render(&self) -> Markup {
         html! {
             nav class="navbar" {
@@ -42,9 +42,9 @@ impl Render for Navbar {
     }
 }
 
-impl Navbar {
+impl Navbar<'_> {
     /// Generate the site's navbar
-    pub fn from_uri(uri: Uri) -> Navbar {
+    pub fn from_uri(uri: &Uri) -> Navbar {
         Navbar {
             links: &TABS,
             current_uri: uri,

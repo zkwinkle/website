@@ -1,7 +1,9 @@
+use std::ops::Deref;
+
 use axum::{
     async_trait,
-    extract::FromRequestParts,
-    http::{request::Parts, Uri},
+    extract::{FromRequestParts, OriginalUri},
+    http::request::Parts,
 };
 use maud::{html, Markup};
 
@@ -18,7 +20,7 @@ use crate::components::navbar::Navbar;
 /// }
 /// ```
 pub struct Layout {
-    uri: Uri,
+    uri: OriginalUri,
 }
 
 #[async_trait]
@@ -28,9 +30,9 @@ where
 {
     type Rejection = std::convert::Infallible;
 
-    async fn from_request_parts(parts: &mut Parts, _state: &S) -> Result<Self, Self::Rejection> {
+    async fn from_request_parts(parts: &mut Parts, state: &S) -> Result<Self, Self::Rejection> {
         Ok(Self {
-            uri: parts.uri.clone(),
+            uri: OriginalUri::from_request_parts(parts, state).await.unwrap(),
         })
     }
 }
@@ -42,7 +44,7 @@ impl Layout {
                 ( STYLESHEET )
             }
             div class="container" {
-                header { (Navbar::from_uri(self.uri)) }
+                header { (Navbar::from_uri(self.uri.deref())) }
                 (content)
             }
         }
