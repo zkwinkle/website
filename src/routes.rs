@@ -11,12 +11,14 @@ mod home;
 mod not_found;
 mod blog;
 
+use self::blog::create_blog_router;
+
 /// Create the main `Router` for this app.
 pub fn create_router(config: AppConfig) -> Router {
     Router::new()
         .route("/", get(|| async { Redirect::permanent("/home") }))
         .route("/home", get(home::home))
-        .route("/blog", get(blog::blog))
+        .nest("/blog", create_blog_router())
         .fallback_service(
             ServeDir::new(config.public_dir).fallback(not_found::not_found.into_service()),
         )

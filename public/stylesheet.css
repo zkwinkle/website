@@ -1,3 +1,4 @@
+/* ---------- GLOBAL RULES ---------- */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Roboto&display=swap');
 
 :root {
@@ -44,7 +45,7 @@ body {
 
 header {
 	padding: 1.5rem 0;
-	border-bottom: 0.2rem solid var(--bg-bright);
+	border-bottom: 3px solid var(--bg-bright);
 }
 
 h1,h2,h3{
@@ -97,6 +98,7 @@ link {
 	color: var(--link-color);
 }
 
+/* ---------- NAVBAR ---------- */
 .navbar {
 	width: 100%;
 }
@@ -123,6 +125,8 @@ link {
 .navbar ul li a.nav-active {
 	color: var(--accent-color);
 }
+
+/* ---------- HOME PAGE ---------- */
 
 .home-banner {
 	display: flex;
@@ -163,4 +167,21 @@ link {
 		font-size: 0;
 		margin: 0;
 	}
+}
+
+/* ---------- BLOGS ---------- */
+
+.blog-title {
+	align-self: center;
+}
+
+.blog-post-title {
+	font-size: 3rem;
+	align-self: center;
+	margin: 2rem;
+}
+
+.post {
+	padding: 1.5rem 0;
+	border-bottom: 3px solid var(--bg-bright);
 }

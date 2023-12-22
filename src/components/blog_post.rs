@@ -4,10 +4,11 @@ use time::{macros::date, Date};
 use crate::components::markdown::Markdown;
 
 /// Tab / Link in the navbar
+#[derive(Clone)]
 pub struct BlogPost {
-    title: &'static str,
-    date: Date,
-    contents: &'static str,
+    pub title: &'static str,
+    pub date: Date,
+    pub contents: &'static str,
 }
 
 pub const BLOG_POSTS: [BlogPost; 0] = [];
@@ -20,7 +21,7 @@ pub const BLOG_POSTS: [BlogPost; 0] = [];
 impl Render for BlogPost {
     fn render(&self) -> Markup {
         html! {
-            h1 { (self.title) }
+            h1 class="blog-post-title" { (self.title) }
             ( Markdown(self.contents) )
         }
     }
