@@ -284,6 +284,7 @@ blockquote {
 		flex-direction: column;
 		align-items: center;
 		gap: 0;
+		margin-bottom: 0;
 	}
 
 	.home-banner img {
@@ -292,7 +293,7 @@ blockquote {
 	}
 
 	.home-banner h1 {
-		font-size: 0;
+		display: none;
 		margin: 0;
 	}
 }

@@ -47,6 +47,8 @@ impl Layout {
             head {
                 ( STYLESHEET )
                 ( FONT_AWESOME )
+                meta name="viewport" content="width=device-width, initial-scale=1";
+
             }
             div id="theme-container" {
                 script {
