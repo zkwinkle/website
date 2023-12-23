@@ -1,15 +1,12 @@
 /* ---------- GLOBAL RULES ---------- */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Roboto:wght@400;700&display=swap');
-@import 'variables.css';
-
-:root {
-	font-family: 'JetBrains Mono', monospace;
-	font-size:18px;
-}
+@import 'colors.css';
 
 body {
 	margin: 0;
-	line-height:1.6;
+}
+
+#theme-container {
 	color: var(--fg);
 	background-color: var(--bg);
 }
@@ -17,10 +14,16 @@ body {
 .container {
 	display: flex;
 	flex-direction: column;
+
 	max-width: 800px;
 	min-height: 100vh;
+
 	margin: 0 auto;
 	padding: 0 2rem;
+
+	font-family: 'JetBrains Mono', monospace;
+	font-size:18px;
+	line-height:1.6;
 }
 
 header {
@@ -162,7 +165,7 @@ blockquote {
 	background-clip: text;
 	-webkit-background-clip: text;
 
-	font-size: 2rem;
+	font-size: 1.75rem;
 }
 
 .theme-selector:hover > label {
@@ -170,25 +173,10 @@ blockquote {
 	transition: 500ms ease;
 }
 
-.theme-selector > input {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	opacity: 0;
-	margin: 0;
-	z-index: 1;
-}
-
-.theme-selector > input:checked {
-	color: var(--link-color);
-}
-
 .theme-selector .theme-popup {
 	display: none;
 	position: absolute;
-	top: 110%;
+	top: 100%;
 	/* Center aligned */
 	left: 50%;
 	transform: translate(-50%, 0);
@@ -242,18 +230,30 @@ blockquote {
 }
 
 .theme-selector .theme-popup .theme > input {
+	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
 	opacity: 0;
 	margin: 0;
-	z-index: 1;
 }
 
 .theme-selector .theme-popup .theme:hover {
 	background-color: var(--bg-brighter);
 }
+
+.theme-selector .theme-popup .theme > label::before {
+	display: none;
+	content: "✓";
+	margin-left: -14px;
+	width: 14px;
+}
+
+.theme-selector .theme-popup .theme > input:checked ~ label::before {
+	display: inline-block
+}
+
 /* ---------- HOME PAGE ---------- */
 
 .home-banner {

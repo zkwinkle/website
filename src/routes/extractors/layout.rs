@@ -5,7 +5,7 @@ use axum::{
     extract::{FromRequestParts, OriginalUri},
     http::request::Parts,
 };
-use maud::{html, Markup};
+use maud::{html, Markup, PreEscaped, DOCTYPE};
 
 use crate::components::css::{FONT_AWESOME, STYLESHEET};
 use crate::components::navbar::Navbar;
@@ -43,13 +43,30 @@ where
 impl Layout {
     pub fn render(self, content: Markup) -> Markup {
         html! {
+            (DOCTYPE)
             head {
                 ( STYLESHEET )
                 ( FONT_AWESOME )
             }
-            div class="container" {
-                header { (Navbar::from_uri(self.uri.deref())) }
-                (content)
+            div id="theme-container" {
+                script {
+                    // NOTE: themeClass variable name is important for the theme
+                    // switcher
+                    (PreEscaped("
+                    const themeContainer = document.getElementById('theme-container');
+                    const themeClass = localStorage.getItem('theme') || 'blue-evening';
+
+                    themeContainer.classList = themeClass;
+
+                    setTimeout(() => {
+                      themeContainer.style.transition = 'all 0.3s ease-in-out';
+                    }, 10);
+                    "))
+                    }
+                div class="container" {
+                    header { (Navbar::from_uri(self.uri.deref())) }
+                    (content)
+                }
             }
         }
     }
