@@ -195,6 +195,18 @@ blockquote {
 	overflow: hidden;
 }
 
+@media screen and (max-width: 950px) {
+	.theme-selector .theme-popup {
+		left:0;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.theme-selector .theme-popup {
+		transform: translate(-75%, 0);
+	}
+}
+
 .theme-selector:hover .theme-popup {
 	display: block;
 }
