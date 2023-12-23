@@ -125,6 +125,13 @@ link {
 	color: var(--link-color);
 }
 
+blockquote {
+	border-left: .25em solid var(--bg-brighter);
+	margin: 1rem 0;
+	padding: 0 1rem;
+	color: color-mix(in srgb, var(--fg-dark) 80%, var(--bg-brighter));
+}
+
 /* ---------- NAVBAR ---------- */
 .navbar {
 	width: 100%;
