@@ -123,6 +123,7 @@ On the [README](https://github.com/zkwinkle/website-server/blob/82a3738db0018496
 
 # Packaging my website
 
+My website is served by a Rust Axum server that's doing SSR.
 To add this website to my **NixOS** server I had to package it with Nix.
 This just entails adding a [`default.nix`](https://github.com/zkwinkle/website/blob/875efa7d60639e4fb2e09a19de7ae8c838a4f656/default.nix) to the website's repo which holds a package "derivation".
 
@@ -214,6 +215,35 @@ services.nginx = {
   recommendedOptimisation = true;
 }
 ```
+
+# systemd service for our website
+
+This is the last part of the [`net.nix`](https://github.com/zkwinkle/website-server/blob/82a3738db00184965c14029a8977506780003b80/configuration/net.nix)  file that we haven't talked about.
+
+I'll just leave here the code block that defines the systemd service that automatically starts the website's Rust server, without much explanation. All the settings are better explained by systemd service docs. I recommend [Arch Linux's wiki section on unit files](https://wiki.archlinux.org/title/Systemd#Writing_unit_files).
+
+```nix
+systemd.services.website = {
+  enable = true;
+  description = "My own personal website";
+
+  after = [ "network.target" "network-online.target" "nss-lookup.target" ];
+  requires = [ "network.target" ];
+  wants = [ "network-online.target" ];
+
+  serviceConfig = {
+    ExecStart = "${pkgs.website}/bin/website";
+    Type = "simple";
+    Restart = "always";
+  };
+  wantedBy = [ "multi-user.target" ];
+};
+```
+
+I will only explain that the variable `${pkgs.<package>}` holds the path to a package's nix store installation folder.
+Like the `$out` variable when we were packaging our program.
+
+We can access this variable for our custom `website` package thanks to our overlay that added `website` to the `pkgs`.
 
 # Deployment
 

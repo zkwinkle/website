@@ -13,7 +13,7 @@ pub struct BlogPost {
 
 pub const BLOG_POSTS: [BlogPost; 1] = [BlogPost {
     contents: include_str!("blog_posts/configuring nixos server.md"),
-    date: date!(2023 - 12 - 22),
+    date: date!(2023 - 12 - 23),
     title: "Setting up my NixOS server",
 }];
 
