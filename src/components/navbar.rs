@@ -36,6 +36,27 @@ impl Render for Navbar<'_> {
                             href=(link.link)
                             { (link.name) }}
                     }
+                    div class="theme-selector" {
+                        label {
+                            i class="fa fa-paint-brush" {}
+                        }
+                        div class="theme-popup" {
+                            ul {
+                                li class="theme" {
+                                    input type="radio" id="blue-evening";
+                                    label for="blue-evening" {
+                                        "Blue Evening"
+                                    }
+                                }
+                                li class="theme" {
+                                    input type="radio" id="pink-fair";
+                                    label for="pink-fair" {
+                                        "Pink Fair"
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

@@ -6,6 +6,9 @@ use maud::{html, Markup, Render};
 /// Main stylesheet used throughout the website
 pub const STYLESHEET: Css = Css("/stylesheet.css");
 
+/// Font Awesome stylesheet
+pub const FONT_AWESOME: Css = Css("/font-awesome-4.7.0/css/font-awesome.min.css");
+
 /// Links to a CSS stylesheet at the given path.
 pub struct Css(&'static str);
 
