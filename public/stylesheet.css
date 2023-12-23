@@ -21,15 +21,16 @@
 	--warning-color: #F9C199; /* base0A */
 	--success-color: #21A990; /* base0B */
 	--link-color: #907BF4; /* base0C */
-	--unused: #8BBBF4; /* base0D */
+	--accent-color3: #8BBBF4; /* base0D */
 	--accent-color2: #C58BF4; /* base0E */
 	--accent-color: #EE64AC; /* base0F */
+
+	font-size:18px;
 }
 
 body {
 	margin: 0;
 	line-height:1.6;
-	font-size:18px;
 	color: var(--fg);
 	background-color: var(--bg);
 }
@@ -70,6 +71,31 @@ h4{
 p {
 	font-family: 'Roboto', sans-serif;
 	margin: 0;
+}
+
+hr {
+	border-width: 1px;
+	border-color: var(--bg-bright);
+}
+
+pre {
+	background: var(--black);
+	overflow: auto;
+	font-family: 'JetBrains Mono', monospace;
+	padding: 1rem;
+	margin: 1rem 0;
+	border-radius: 0.5rem;
+}
+
+:not(pre) > code {
+	background: color-mix(in srgb, var(--bg) 60%, var(--black));
+	border-radius: 0.2rem;
+	font-size: 0.9rem;
+	padding: 0.1rem;
+}
+
+:not(pre, a) > code {
+	color: var(--accent-color3);
 }
 
 a {
@@ -193,5 +219,5 @@ link {
 
 .post-preview {
 	padding: 1.5rem 0;
-	border-bottom: 3px solid var(--bg-bright);
+	/* border-bottom: 3px solid var(--bg-bright); */
 }

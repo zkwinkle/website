@@ -278,7 +278,7 @@ And created a Nix package derivation for it and added it as a package to my OS.
 
 Last thing I did was add an alias to run the following:
 
-```
+```sh
 alias deploy='ssh website-server -t update-website'
 ```
 
