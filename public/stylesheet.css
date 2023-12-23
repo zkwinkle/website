@@ -314,6 +314,7 @@ blockquote {
 
 .blog-title {
 	align-self: center;
+	text-align: center;
 }
 
 .blog-post-header {
@@ -334,4 +335,10 @@ blockquote {
 .post-preview {
 	padding: 1.5rem 0;
 	/* border-bottom: 3px solid var(--bg-bright); */
+}
+
+@media screen and (max-width: 500px) {
+	.post-preview h2 {
+		font-size: 20px;
+	}
 }
