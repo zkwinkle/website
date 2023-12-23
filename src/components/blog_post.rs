@@ -11,18 +11,21 @@ pub struct BlogPost {
     pub contents: &'static str,
 }
 
-pub const BLOG_POSTS: [BlogPost; 0] = [];
-// [BlogPost {
-//     contents: include_str!("blog_posts/First post.md"),
-//     date: date!(2023 - 12 - 20),
-//     title: "First post!",
-// }];
+pub const BLOG_POSTS: [BlogPost; 1] = [BlogPost {
+    contents: include_str!("blog_posts/configuring nixos server.md"),
+    date: date!(2023 - 12 - 22),
+    title: "Setting up my NixOS server",
+}];
 
 impl Render for BlogPost {
     fn render(&self) -> Markup {
         html! {
-            h1 class="blog-post-title" { (self.title) }
-            ( Markdown(self.contents) )
+            div class="blog-post" {
+                div class="blog-post-header" {
+                    h1 { (self.title) }
+                }
+                ( Markdown(self.contents) )
+            }
         }
     }
 }

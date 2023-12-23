@@ -1,5 +1,5 @@
 /* ---------- GLOBAL RULES ---------- */
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Roboto:wght@400;700&display=swap');
 
 :root {
 	font-family: 'JetBrains Mono', monospace;
@@ -35,12 +35,12 @@ body {
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  max-width: 800px;
-  min-height: 100vh;
-  margin: 0 auto;
-  padding: 0 2rem;
+	display: flex;
+	flex-direction: column;
+	max-width: 800px;
+	min-height: 100vh;
+	margin: 0 auto;
+	padding: 0 2rem;
 }
 
 header {
@@ -48,7 +48,7 @@ header {
 	border-bottom: 3px solid var(--bg-bright);
 }
 
-h1,h2,h3{
+h1,h2,h3,h4{
 	margin: 4rem 0 1rem;
 	line-height:1.2;
 	color: var(--fg-bright);
@@ -63,7 +63,8 @@ h3{
 }
 
 h4{
-	margin: 0.5rem 0 0.25rem;
+	margin: 3rem 0 1.5rem;
+	color: var(--white);
 }
 
 p {
@@ -175,13 +176,22 @@ link {
 	align-self: center;
 }
 
-.blog-post-title {
-	font-size: 3rem;
-	align-self: center;
+.blog-post-header {
+	text-align: center;
 	margin: 2rem;
 }
 
-.post {
+.blog-post-header h1{
+	color: var(--fg-brighter);
+	font-size: 3rem;
+	margin: 0;
+}
+
+.blog-post p {
+	margin: 1em 0;
+}
+
+.post-preview {
 	padding: 1.5rem 0;
 	border-bottom: 3px solid var(--bg-bright);
 }

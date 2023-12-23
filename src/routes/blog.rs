@@ -21,7 +21,7 @@ async fn blog(layout: Layout) -> Markup {
     layout.render(html! {
         h1 class="blog-title" { "zkwinkle's blog🗒️" }
         @for blog in &BLOG_POSTS {
-            div class="post" {
+            div class="post-preview" {
                 h2  { a href=(format!("/blog/{}",linkify_title(blog.title))) { (blog.title) } }
                 time datetime=(blog.date) { (blog.date) }
             }
