@@ -30,7 +30,10 @@ where
 {
     type Rejection = std::convert::Infallible;
 
-    async fn from_request_parts(parts: &mut Parts, state: &S) -> Result<Self, Self::Rejection> {
+    async fn from_request_parts(
+        parts: &mut Parts,
+        state: &S,
+    ) -> Result<Self, Self::Rejection> {
         Ok(Self {
             uri: OriginalUri::from_request_parts(parts, state).await.unwrap(),
         })

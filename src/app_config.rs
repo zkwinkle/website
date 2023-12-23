@@ -28,6 +28,4 @@ fn read_env(var_name: &str, default_value_dev: &str) -> String {
 /// # Panics
 ///
 /// Panics when the "production" feature is enabled and the environment variable is not found.
-fn read_env_public_dir() -> String {
-    read_env("PUBLIC_DIR", "public")
-}
+fn read_env_public_dir() -> String { read_env("PUBLIC_DIR", "public") }

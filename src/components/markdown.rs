@@ -65,6 +65,8 @@ const OPTIONS: Options = Options {
 
 impl<T: AsRef<str>> Render for Markdown<T> {
     fn render(&self) -> Markup {
-        PreEscaped(markdown::to_html_with_options(self.0.as_ref(), &OPTIONS).unwrap())
+        PreEscaped(
+            markdown::to_html_with_options(self.0.as_ref(), &OPTIONS).unwrap(),
+        )
     }
 }

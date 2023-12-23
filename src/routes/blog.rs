@@ -8,10 +8,13 @@ pub fn create_blog_router() -> Router {
     let mut router = Router::new().route("/", get(blog));
 
     for post in BLOG_POSTS {
-        router = router.route(
-            &format!("/{}", linkify_title(post.title)),
-            get(|layout: Layout| async move { layout.render(html! { ( post ) }) }),
-        )
+        router =
+            router.route(
+                &format!("/{}", linkify_title(post.title)),
+                get(|layout: Layout| async move {
+                    layout.render(html! { ( post ) })
+                }),
+            )
     }
 
     router
@@ -30,7 +33,8 @@ async fn blog(layout: Layout) -> Markup {
 }
 
 fn linkify_title(title: &str) -> String {
-    let mut url_title = title.split_ascii_whitespace().collect::<Vec<_>>().join("_");
+    let mut url_title =
+        title.split_ascii_whitespace().collect::<Vec<_>>().join("_");
 
     url_title.make_ascii_lowercase();
 
