@@ -3,7 +3,7 @@ I ***highly recommend it***, so I wanna share my experience hoping it'll make so
 
 As mentioned, I'm using Linode as my VPS provider but of course the actual NixOS configuration part can be done anywhere where you can install the distro.
 
-*Disclaimer:* This guide is *very* detailed, feel free to skip sections if it gets too slow for you. Now, with that considered, I'd say the guide is still pretty short for what can be achieved. It **will** leave you with a really strong base to work with for your server.
+*Disclaimer:* I feel like I made this guide too detailed, feel free to skip sections if it gets too slow for you. Now, with that considered, I'd say the guide is also very short for what it achieves. It **will** leave you with a really strong base to work with for your server.
 
 ---
 
