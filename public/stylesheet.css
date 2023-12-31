@@ -70,7 +70,7 @@ pre {
 }
 
 :not(pre) > code {
-	background: color-mix(in srgb, var(--bg) 60%, var(--black));
+	background: color-mix(in srgb, var(--bg) 30%, var(--black));
 	border-radius: 0.2rem;
 	font-size: 0.9rem;
 	padding: 0.1rem;
