@@ -39,7 +39,7 @@ pub async fn home(layout: Layout) -> Markup {
             li { "Hollow Knight 🪲" }
             li { "Antichamber 🧩" }
             li { "Team Fortress 2 🔥" }
-            li { strike{"League of Legends 🙃"} }
+            li { "Dota 2 ⚔️" }
             li { "Zelda 🧝🏻‍♀️" }
         }
 
