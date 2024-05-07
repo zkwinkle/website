@@ -70,7 +70,7 @@ The flake will look inside the [`configuration/`](https://github.com/zkwinkle/we
 
 ## Basic config
 
-The boot options inside [`boot.nix`](https://github.com/zkwinkle/website-server/blob/82a3738db00184965c14029a8977506780003b80/configuration/boot.nix), as well as the user optins inside [`configuration.nix`](https://github.com/zkwinkle/website-server/blob/82a3738db00184965c14029a8977506780003b80/configuration/boot.nix) are covered inside the [Linode guide](https://www.linode.com/docs/guides/install-nixos-on-linode/).
+The boot options inside [`boot.nix`](https://github.com/zkwinkle/website-server/blob/82a3738db00184965c14029a8977506780003b80/configuration/boot.nix), as well as the user options inside [`configuration.nix`](https://github.com/zkwinkle/website-server/blob/82a3738db00184965c14029a8977506780003b80/configuration/boot.nix) are covered inside the [Linode guide](https://www.linode.com/docs/guides/install-nixos-on-linode/).
 You can also look for the options in the [NixOS search index](https://search.nixos.org/options) to understand them.
 
 # Network setup
