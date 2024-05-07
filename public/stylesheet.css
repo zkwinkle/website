@@ -223,6 +223,8 @@ blockquote {
 	list-style: none;
 	display: flex;
 	flex-direction: column;
+	height: auto;
+	align-items: normal;
 }
 
 .theme-selector .theme-popup .theme {
