@@ -38,5 +38,7 @@ fn linkify_title(title: &str) -> String {
 
     url_title.make_ascii_lowercase();
 
+    let url_title = url_title.chars().filter(|c| *c != '?').collect();
+
     url_title
 }
