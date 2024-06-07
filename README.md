@@ -7,9 +7,25 @@ My website :)
 - [Axum](https://github.com/tokio-rs/axum)
 - [Maud](https://maud.lambda.xyz/)
 
+## Running locally
+
+To watch:
+```
+cargo w
+```
+
+Or just build once and run:
+```
+cargo run
+```
+
+Then go to http://localhost:31415.
+
 ## Production
 
 When running in production set the `production` feature flag.
+
+Website can be found at https://zkwinkle.is-a.dev/home.
 
 ### Environment variables
 

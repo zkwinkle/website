@@ -10,7 +10,7 @@ production = []
 # When maud supports axum 0.7 we can update maud, axum, and tower-http
 axum = "0.6"
 markdown = "1.0.0-alpha.16"
-maud = { version = "0.25.0", features = ["axum"] }
-time = { version = "0.3.31", features = ["formatting", "macros"] }
-tokio = { version = "1.35.0", features = ["macros", "rt-multi-thread"] }
-tower-http = { version = "0.4.4", features = ["fs"] }
+maud = { version = "0.25", features = ["axum"] }
+time = { version = "0.3", features = ["formatting", "macros"] }
+tokio = { version = "1.35", features = ["macros", "rt-multi-thread"] }
+tower-http = { version = "0.4", features = ["fs"] }
