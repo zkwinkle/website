@@ -56,7 +56,7 @@ impl Layout {
                     // switcher
                     (PreEscaped("
                     const themeContainer = document.getElementById('theme-container');
-                    const themeClass = localStorage.getItem('theme') || 'blue-evening';
+                    const themeClass = localStorage.getItem('theme') || 'sunny-picnic';
 
                     themeContainer.classList = themeClass;
 
