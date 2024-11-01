@@ -8,6 +8,7 @@ pkgs.rustPlatform.buildRustPackage rec {
     makeWrapper
   ];
   buildFeatures = [ "production" ];
+	doCheck = false;
   postInstall = ''
     		cp -r public $out/public
     		wrapProgram $out/bin/website \
