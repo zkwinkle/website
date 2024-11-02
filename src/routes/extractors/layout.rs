@@ -8,7 +8,7 @@ use axum::{
 use maud::{html, Markup, PreEscaped, DOCTYPE};
 
 use crate::components::css::{FONT_AWESOME, STYLESHEET};
-use crate::components::navbar::Navbar;
+use crate::components::{navbar::Navbar, theme_selector::ThemeSelector};
 
 /// Defines the base layout of a page that will wrap its contents with container
 /// divs, headers, footers.
@@ -66,7 +66,10 @@ impl Layout {
                     "))
                     }
                 div class="container" {
-                    header { (Navbar::from_uri(self.uri.deref())) }
+                    header {
+                            (Navbar::from_uri(self.uri.deref()))
+                            (ThemeSelector)
+                    }
                     (content)
                 }
             }
