@@ -1,4 +1,5 @@
-#![doc = include_str!("../README.md")]
+//! Server that serves my personal website.
+
 #![deny(missing_docs)]
 
 mod app_config;
