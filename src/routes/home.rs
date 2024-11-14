@@ -15,7 +15,7 @@ pub async fn home(layout: Layout) -> Markup {
 
         h1 { "Info" }
         p { "I'm Ignacio, or " em { "zkwinkle" } ", as I often go by in online spaces.
-        I'm a student engineer, with an interest in the fields of Embedded (or any kind of low-level development), Graphics, Machine Learning, and Signal Analysis/Processing. I'm a big Rust🦀 enthusiast, also I use Arch BTW."
+        I'm a student engineer, with an interest in the fields of Computer Graphics, Low-level Development, Machine Learning, and Signal Analysis/Processing. I'm a big Rust🦀 enthusiast, also I use Arch BTW."
             br; br;
         "So welcome to my website / digital garden / virtual world! Here I'll be hosting my blog as well as any
         other silly little ideas I might wanna share with the world."
@@ -24,11 +24,16 @@ pub async fn home(layout: Layout) -> Markup {
         h1 { "Projects" }
 
         p { "These are my personal projects I'm most proud of:" }
-        ul {
-            li { a href="https://github.com/zkwinkle/website"  {"This website!"} }
-            li { a href="https://github.com/zkwinkle/raytracer_ini"  {"Rust Raytracer"} }
-            li { a href="https://github.com/zkwinkle/Emulador-MIPS"  {"MIPS Emulator"} }
-        }
+
+        h2 { a href="/µwgpu"  {"µwgpu"}}
+        p { "GPU microbenchmarks on any platform. It includes a library, a suite, a CLI tool for native execution, and a website for browser execution." }
+        p { "Please consider submitting your execution data to support the project." }
+
+        h2 { a href="https://github.com/zkwinkle/raytracer_ini"  {"Rust Raytracer"} }
+        p { "This was my intro to computer graphics, a CPU raytracer. It was also my first semi-serious Rust project. I like showing it off because it makes pretty images." }
+
+        h2 { a href="https://github.com/zkwinkle/Emulador-MIPS"  {"MIPS Emulator"} }
+        p { "A MIPS architecture emulator written in C. It's capable of running a game I made in assembly!" }
 
         h1 { "Favorites" }
 
