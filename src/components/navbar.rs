@@ -7,7 +7,7 @@ struct NavLink {
     link: &'static str,
 }
 
-const TABS: [NavLink; 2] = [
+const TABS: &'static [NavLink] = &[
     NavLink {
         name: "🏡 Home",
         link: "/home",
@@ -15,6 +15,10 @@ const TABS: [NavLink; 2] = [
     NavLink {
         name: "📝 Blog",
         link: "/blog",
+    },
+    NavLink {
+        name: "📊 µwgpu",
+        link: "/uwgpu",
     },
 ];
 
@@ -46,7 +50,7 @@ impl Navbar<'_> {
     /// Generate the site's navbar
     pub fn from_uri(uri: &Uri) -> Navbar {
         Navbar {
-            links: &TABS,
+            links: TABS,
             current_uri: uri,
         }
     }
