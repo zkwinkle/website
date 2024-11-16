@@ -25,7 +25,7 @@ pub async fn home(layout: Layout) -> Markup {
 
         p { "These are my personal projects I'm most proud of:" }
 
-        h2 { a href="/µwgpu"  {"µwgpu"}}
+        h2 { a href="/uwgpu"  {"µwgpu"}}
         p { "GPU microbenchmarks on any platform. It includes a library, a suite, a CLI tool for native execution, and a website for browser execution." }
         p { "Please consider submitting your execution data to support the project." }
 
